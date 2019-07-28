@@ -1,0 +1,60 @@
+.hero{
+    display: block;
+    height: 100rem;
+    max-width: 100%;
+    background-color:rgb(151, 34, 53);
+
+    @include respond(laptop){
+    }
+
+    display: flex;
+    height: 100vh;
+
+    &__left{
+        flex-basis: 41%;
+        background-color: #813847;
+
+    
+    }
+
+    &__text-box{
+        color: #eee;
+        position: absolute;
+        top: 40%;
+        left: 6%;
+        // transform: translate(-20%, -30%);
+    
+
+        
+        .heading-primary{
+
+            // @include clearfix;
+            color: #eee;
+            &--main{
+                font-size: 4rem; 
+                display: block;
+                animation: moveToRight 2s ease-in-out;
+            }
+            &--sub{
+                font-size: 7rem;
+                display: block;
+                margin-bottom: 3rem;
+                animation: moveToLeft 2s ease-in-out;
+
+            }
+        }
+    }
+    &__right{
+        flex: 1;
+        
+        background-image: url(https://www.disconnect.store/wp-content/uploads/2018/12/cover2-2-1640x1560.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        
+    }
+
+
+
+
+}

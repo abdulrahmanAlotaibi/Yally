@@ -1,0 +1,33 @@
+.section-about{
+    margin-top: 10rem;
+    text-align: center;
+    h3{
+        display: inline-block;
+        margin-top: 3rem;
+        font-size: 2rem;
+    }
+    .card{
+        display: block;
+        position: relative;
+
+        height: 55rem;
+
+        .icon{
+            font-size: 1.5rem;
+            transform: translateY(10%);
+            margin-left: .5rem;
+        }
+        &--1{
+            
+            background-image:url(https://www.disconnect.store/wp-content/themes/disconnect/assets/img/TXX-global/business-push.jpg); 
+            background-size: cover;
+        }
+
+
+        &--2{
+            background-image: url(https://www.disconnect.store/wp-content/themes/disconnect/assets/img/TXX-global/about-push.jpg);
+            background-size: cover;
+
+        }
+    }
+}

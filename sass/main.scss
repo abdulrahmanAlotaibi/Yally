@@ -1,0 +1,25 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+@import "abstracts/animations";
+
+@import "base/typography";
+@import "base/base";
+@import "base/utilities";
+
+@import "layout/header"; 
+@import "layout/grid";
+@import "layout/footer";
+
+
+@import "components/nav";
+@import "components/button"; 
+@import "components/features"; 
+
+
+
+@import "pages/hero";
+@import "pages/about";
+
+  
+//Vendor s

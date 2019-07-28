@@ -1,0 +1,63 @@
+.btn{
+    font-size: 1.4rem;
+    display: inline-block;
+    margin-right:2rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    color: #eee;
+    // transition: all .2s;
+    
+
+
+    
+
+        &--shop-now{
+
+            // text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $color-black;
+            padding: 1.3rem 2rem;
+            border-radius: 1.5px;
+            text-align: center;
+            background-color: #eee; 
+            position: relative;
+            z-index: 10;
+            font-weight: bold;
+            animation: moveToTop 2s ease-in-out ;
+        }
+
+        
+
+        &--all-magazines{
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            text-align: center;
+            color: #eee;
+            background-color: #32323C;
+            transition: all .2s ease-in-out;
+
+            &:hover{
+
+                color: #32323C;
+                background-color: #eee;
+                border: .1px solid #32323C;
+            }
+        
+        }
+
+
+        &--read-more{
+            font-size: 1.5rem; 
+            color: rgb(59, 57, 57);
+            font-weight: 600;
+            
+        }
+
+    
+
+}
+
+    

@@ -1,0 +1,55 @@
+.footer{
+    display: block;
+    padding: 9rem;
+    height: 40rem;
+    background-color: #32323C;
+    &__box-1{
+        margin-bottom: 3rem; 
+    }
+
+
+    &__logo{
+        text-decoration: none;
+        color: white;
+        font-size: 3rem;
+    }
+    span{
+        color: rgb(155, 152, 152);
+        font-size: 1.3rem;
+        display: block;
+    }
+    h2{
+        font-size: 1.5rem;
+        color: #eee;
+        font-weight: bold;
+
+    }
+    &__btn{
+        font-size: 1.3rem;
+        display: block;
+        text-decoration: none;
+        color: rgb(155, 152, 152);
+        transition: color .1s;
+        &:hover{
+            color: #eee;
+        }
+    
+    }
+
+    .rights{
+        padding-top: 2.2rem;
+        text-align: center;
+        
+        &__copyrights{
+            font-size: 1.3rem;
+        }
+        &__icon{
+            font-size: 3rem;
+            display: inline-block;
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+
+        }
+    }
+}

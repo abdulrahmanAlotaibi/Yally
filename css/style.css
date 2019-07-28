@@ -1,0 +1,315 @@
+:root {
+  --color-black:black;
+  --color-pink: pink;
+  --color-grey: grey; }
+
+/* 
+0 - 600px : PHONE
+600PX - 900PX : TABLET PORTRAIT
+900PX - 1200PX : TABLET LANDSCAPE
+[1200 - 1800] IS WHERE OUR NORMAL STYLES APPLY
+900PX - 1200PX :LAPTOP 
+1800PX + : BIG DESKTOP
+
+
+$breakpoints arguments chioces:
+- Phone 
+- tab-port
+-tab-port2
+- tab-land
+- big-desktop
+
+1em = 16px
+
+ORDER: Base + typography > general layout + grid > page layout > componenets 
+*/
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-140px); }
+  80% {
+    opacity: 1;
+    transform: translateX(16px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(140px); }
+  80% {
+    opacity: 1;
+    transform: translateX(-16px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(140px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box; }
+
+.line {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.26); }
+
+.line--top {
+  border-top: 1px solid rgba(128, 128, 128, 0.26); }
+
+.bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -10%); }
+
+.header {
+  height: 9.5rem;
+  position: absolute;
+  width: 100%;
+  transition: all .3s ease-in-out; }
+  .header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .header:hover {
+    background-color: #eee; }
+    .header:hover .btn {
+      color: grey;
+      transition: all .2s ease-in-out; }
+      .header:hover .btn:hover {
+        color: #000; }
+    .header:hover .logo {
+      color: #000; }
+
+.row {
+  max-width: 114rem;
+  position: relative;
+  display: block;
+  margin: 0 auto; }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 3rem;
+      margin-bottom: 3rem; }
+  .row .col-1-of-2 {
+    width: calc( ( 100% - 3rem ) / 2); }
+  .row .col-1-of-3 {
+    width: calc( ( 100% - 2 * 3rem ) / 3); }
+  .row .col-2-of-3 {
+    width: calc( (( 100% - 2 * 3rem ) / 3) * 2 + 3rem); }
+  .row .col-1-of-4 {
+    width: calc( ( 100% - 3 * 3rem ) / 4); }
+  .row .col-3-of-4 {
+    width: calc( (( 100% - 3 * 3rem ) / 4) * 3 + 2 * 3rem); }
+
+.footer {
+  display: block;
+  padding: 9rem;
+  height: 40rem;
+  background-color: #32323C; }
+  .footer__box-1 {
+    margin-bottom: 3rem; }
+  .footer__logo {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem; }
+  .footer span {
+    color: #9b9898;
+    font-size: 1.3rem;
+    display: block; }
+  .footer h2 {
+    font-size: 1.5rem;
+    color: #eee;
+    font-weight: bold; }
+  .footer__btn {
+    font-size: 1.3rem;
+    display: block;
+    text-decoration: none;
+    color: #9b9898;
+    transition: color .1s; }
+    .footer__btn:hover {
+      color: #eee; }
+  .footer .rights {
+    padding-top: 2.2rem;
+    text-align: center; }
+    .footer .rights__copyrights {
+      font-size: 1.3rem; }
+    .footer .rights__icon {
+      font-size: 3rem;
+      display: inline-block; }
+      .footer .rights__icon:not(:last-child) {
+        margin-right: 1rem; }
+
+.nav {
+  margin: 0 auto;
+  width: 100%;
+  height: 3rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .nav:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .nav > * {
+    height: 3rem;
+    display: inline-block; }
+    .nav > *:not(:last-child) {
+      margin-right: 16rem; }
+  .nav__middle .logo {
+    font-weight: 400;
+    font-size: 2.8rem;
+    font-family: 'Merriweather', serif;
+    text-decoration: none;
+    color: white; }
+
+.btn {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-right: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  color: #eee; }
+  .btn--shop-now {
+    letter-spacing: 1px;
+    color: #000;
+    padding: 1.3rem 2rem;
+    border-radius: 1.5px;
+    text-align: center;
+    background-color: #eee;
+    position: relative;
+    z-index: 10;
+    font-weight: bold;
+    animation: moveToTop 2s ease-in-out; }
+  .btn--all-magazines {
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #eee;
+    background-color: #32323C;
+    transition: all .2s ease-in-out; }
+    .btn--all-magazines:hover {
+      color: #32323C;
+      background-color: #eee;
+      border: .1px solid #32323C; }
+  .btn--read-more {
+    font-size: 1.5rem;
+    color: #3b3939;
+    font-weight: 600; }
+
+.section-features {
+  margin: 0 auto;
+  width: 114rem;
+  padding: 16rem 0;
+  text-align: center;
+  color: black; }
+  .section-features .feature-box__picture {
+    width: 70%;
+    margin: 3rem auto;
+    height: 30rem;
+    background-size: cover; }
+    .section-features .feature-box__picture--1 {
+      background-image: url(https://michaelshermer.com/writing/wp-content/uploads/cover_2015-09.jpg); }
+    .section-features .feature-box__picture--2 {
+      background-image: url(https://trustindesign.files.wordpress.com/2011/12/science-magazine-6-nov-2009.png); }
+    .section-features .feature-box__picture--3 {
+      background-image: url(https://michaelshermer.com/writing/wp-content/uploads/cover_2015-10.jpg); }
+  .section-features .feature-box__text {
+    margin-bottom: .6rem;
+    display: block; }
+    .section-features .feature-box__text--name {
+      color: #252525;
+      font-size: 1.4rem; }
+    .section-features .feature-box__text--volume {
+      color: #45454C;
+      font-size: 1.2rem; }
+    .section-features .feature-box__text--price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #0e0e0e; }
+
+.hero {
+  display: block;
+  height: 100rem;
+  max-width: 100%;
+  background-color: #972235;
+  display: flex;
+  height: 100vh; }
+  .hero__left {
+    flex-basis: 41%;
+    background-color: #813847; }
+  .hero__text-box {
+    color: #eee;
+    position: absolute;
+    top: 40%;
+    left: 6%; }
+    .hero__text-box .heading-primary {
+      color: #eee; }
+      .hero__text-box .heading-primary--main {
+        font-size: 4rem;
+        display: block;
+        animation: moveToRight 2s ease-in-out; }
+      .hero__text-box .heading-primary--sub {
+        font-size: 7rem;
+        display: block;
+        margin-bottom: 3rem;
+        animation: moveToLeft 2s ease-in-out; }
+  .hero__right {
+    flex: 1;
+    background-image: url(https://www.disconnect.store/wp-content/uploads/2018/12/cover2-2-1640x1560.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat; }
+
+.section-about {
+  margin-top: 10rem;
+  text-align: center; }
+  .section-about h3 {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 2rem; }
+  .section-about .card {
+    display: block;
+    position: relative;
+    height: 55rem; }
+    .section-about .card .icon {
+      font-size: 1.5rem;
+      transform: translateY(10%);
+      margin-left: .5rem; }
+    .section-about .card--1 {
+      background-image: url(https://www.disconnect.store/wp-content/themes/disconnect/assets/img/TXX-global/business-push.jpg);
+      background-size: cover; }
+    .section-about .card--2 {
+      background-image: url(https://www.disconnect.store/wp-content/themes/disconnect/assets/img/TXX-global/about-push.jpg);
+      background-size: cover; }

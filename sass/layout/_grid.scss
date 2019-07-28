@@ -1,0 +1,57 @@
+// Variables
+
+$grid-wdith : 114rem;
+$horizantal-space: 3rem;
+
+//Grid
+.row{
+    @include clearfix;
+    max-width: $grid-wdith;
+    position: relative;
+    display: block;
+    // border: .3px dashed rgb(117, 80, 80);
+    margin: 0 auto;
+    
+
+    &:not(:last-child){
+        margin-bottom: 6rem;
+    }
+
+    [class^="col-"]{ //&>*{}
+    // background-color: rgb(136, 30, 48);
+
+        float: left;
+        // height: 12rem;
+        &:not(:last-child){
+            margin-right: $horizantal-space; 
+            margin-bottom: 3rem;             
+        }
+    }
+
+    .col-1-of-2{
+        width: calc( ( 100% - #{$horizantal-space} ) / 2  );
+    }
+
+    .col-1-of-3{
+        width: calc( ( 100% - 2 * #{$horizantal-space} ) / 3 );
+
+    }
+
+    .col-2-of-3{
+        width: calc( (( 100% - 2 * #{$horizantal-space} ) / 3) * 2 + #{$horizantal-space} );
+
+    }
+
+    .col-1-of-4{
+        width: calc( ( 100% - 3 * #{$horizantal-space} ) / 4);
+    }
+
+
+    .col-3-of-4{
+        width: calc( (( 100% - 3 * #{$horizantal-space} ) / 4) * 3 + 2 * #{$horizantal-space} );
+    }
+
+
+
+
+}
